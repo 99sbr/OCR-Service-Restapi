@@ -1,18 +1,27 @@
-from application.main.config import settings
+from fastapi.exceptions import HTTPException
 from application.initializer import LoggerInstance
-from application.main.infrastructure.classification.image.inference import InferenceTask
+from application.main.utility.worker.image_utils import BasicImageUtils
+from application.main.utility.worker.ocr_engine import OCREngine
+
 
 
 class OCRService(object):
 
     def __init__(self):
         self.logger = LoggerInstance().get_logger(__name__)
-        self.image_model = InferenceTask()
-        self.image_classification_model = settings.MOBILENET_V2
-        self.IMAGE_SHAPE = (224, 224)
 
-    async def classify(self, image_file):
-        self.logger.info(f'Model IN use : {self.image_classification_model}')
-        label = await self.image_model.predict(classifier_model_name=self.image_classification_model, image=image_file,
-                                               shape=self.IMAGE_SHAPE)
-        return label
+    async def run_ocr(self, data):
+        try:
+            self.logger.info('Decoding Image')
+            image = await BasicImageUtils.decode_b64_image(data)
+        except Exception as e:
+            self.logger.error(str(e))
+            raise HTTPException(status_code=400, detail=f"Invalid image data: {e}")
+        
+        try:
+            self.logger.info('Running OCR')
+            text = await OCREngine.extract_text(image)
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=f"Error extracting text: {e}")
+        
+        return text

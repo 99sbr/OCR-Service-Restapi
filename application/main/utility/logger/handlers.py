@@ -1,24 +1,37 @@
 from logging.handlers import TimedRotatingFileHandler, SocketHandler
 from pathlib import Path
-from application.main.config import settings
-from application.main.utility.config_loader import ConfigReaderInstance
+import logging
+from dotenv import load_dotenv
+import os
+import sys
+import yaml
+# Load environment variables from .env file
+load_dotenv()
 
 
-logging_config = ConfigReaderInstance.yaml.read_config_from_file(
-    settings.LOG_CONFIG_FILENAME)
-
+class Struct:
+    def __init__(self, **entries):
+        self.__dict__.update(entries)
 
 class Handlers:
 
     def __init__(self):
+        self.conf_path =  Path().joinpath(os.environ['SETTING_FOLDER'], os.environ['LOG_CONFIG_FILENAME'])
+        logging_config = Handlers._load_logging_config(self.conf_path)
         self.formatter = logging.Formatter(logging_config.FORMATTER)
         self.log_filename = Path().joinpath(
-            settings.APP_CONFIG.LOGS_DIR, logging_config.FILENAME)
+            os.environ['LOG_FOLDER_NAME'], logging_config.FILENAME)
         self.rotation = logging_config.ROTATION
+
+    @staticmethod
+    def _load_logging_config(conf_path):
+        with open(conf_path) as file:
+            config = yaml.safe_load(file)
+        config_object = Struct(**config)
+        return config_object
 
     def get_console_handler(self):
         """
-
         :return:
         """
         console_handler = logging.StreamHandler(sys.stdout.flush())
