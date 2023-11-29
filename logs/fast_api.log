@@ -1,0 +1,24 @@
+2023-11-29 13:45:59,855 - 139754687373952 - application.src.router.ocr - INFO - Received Request to Process Image for OCR at 2023-11-29 13:45:59.855164
+2023-11-29 13:52:41,002 - 139775461147264 - application.src.router.ocr - INFO - Received Request to Process Image for OCR at 2023-11-29 13:52:41.002664
+2023-11-29 13:52:41,005 - 139775461147264 - application.src.services.ocr_service - INFO - Decoding Image
+2023-11-29 13:52:41,006 - 139775461147264 - application.src.services.ocr_service - ERROR - Incorrect padding
+2023-11-29 13:59:17,910 - 140135531389568 - application.src.router.ocr - INFO - Received Request to Process Image for OCR at 2023-11-29 13:59:17.910387
+2023-11-29 13:59:17,913 - 140135531389568 - application.src.services.ocr_service - INFO - Decoding Image
+2023-11-29 13:59:17,987 - 140135531389568 - application.src.services.ocr_service - INFO - Running OCR
+2023-11-29 14:00:55,351 - 139645814006400 - application.src.router.ocr - INFO - Received Request to Process Image for OCR at 2023-11-29 14:00:55.351286
+2023-11-29 14:00:55,355 - 139645814006400 - application.src.services.ocr_service - INFO - Decoding Image
+2023-11-29 14:00:55,372 - 139645814006400 - application.src.services.ocr_service - INFO - Running OCR
+2023-11-29 14:00:55,378 - 139645814006400 - application.src.utility.worker.ocr_engine - INFO - Running OCR
+2023-11-29 14:27:23,958 - 140602996908672 - application.src.router.ocr - INFO - Received Request to Process Image for OCR at 2023-11-29 14:27:23.958370
+2023-11-29 14:27:23,963 - 140602996908672 - application.src.services.ocr_service - INFO - Decoding Image
+2023-11-29 14:27:23,971 - 140602996908672 - application.src.services.ocr_service - INFO - Running OCR
+2023-11-29 14:27:23,971 - 140602996908672 - application.src.utility.worker.ocr_engine - INFO - Running OCR
+2023-11-29 14:27:24,575 - 140602996908672 - application.src.utility.worker.ocr_engine - INFO - Completed OCR
+2023-11-29 14:27:24,575 - 140602996908672 - application.src.router.ocr - INFO - Completed
+2023-11-29 14:28:25,189 - 140118952321664 - application.src.router.ocr - INFO - Received Request to Process Image for OCR at 2023-11-29 14:28:25.189637
+2023-11-29 14:28:25,194 - 140118952321664 - application.src.services.ocr_service - INFO - Decoding Image
+2023-11-29 14:28:25,225 - 140118952321664 - application.src.utility.worker.image_utils - INFO - Image Cached at: cache/82c26132-de9a-4d83-870d-a51a48c884b9.jpg
+2023-11-29 14:28:25,226 - 140118952321664 - application.src.services.ocr_service - INFO - Running OCR
+2023-11-29 14:28:25,226 - 140118952321664 - application.src.utility.worker.ocr_engine - INFO - Running OCR
+2023-11-29 14:28:25,513 - 140118952321664 - application.src.utility.worker.ocr_engine - INFO - Completed OCR
+2023-11-29 14:28:25,514 - 140118952321664 - application.src.router.ocr - INFO - Completed

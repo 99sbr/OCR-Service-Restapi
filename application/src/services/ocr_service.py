@@ -1,7 +1,7 @@
 from fastapi.exceptions import HTTPException
 from application.initializer import LoggerInstance
-from application.main.utility.worker.image_utils import BasicImageUtils
-from application.main.utility.worker.ocr_engine import OCREngine
+from application.src.utility.worker.image_utils import BasicImageUtils
+from application.src.utility.worker.ocr_engine import OCREngine
 
 
 

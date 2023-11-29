@@ -16,7 +16,7 @@ def get_application():
     _app.include_router(IncludeAPIRouter())
     _app.add_middleware(
         CORSMiddleware,
-        allow_credentials=False,
+        allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],
     )
@@ -24,4 +24,4 @@ def get_application():
 
 
 app = get_application()
-#uvicorn.run("manage:app", host=os.environ['HOST'], port=os.environ['PORT'], log_level=os.environ['LOG_LEVEL'], use_colors=True,reload=True)
+# uvicorn.run("manage:app",reload=True)

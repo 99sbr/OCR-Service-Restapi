@@ -1,12 +1,12 @@
 class LoggerInstance(object):
     def __new__(cls):
-        from application.main.utility.logger.custom_logging import LogHandler
+        from application.src.utility.logger.custom_logging import LogHandler
         return LogHandler()
 
 
 class IncludeAPIRouter(object):
     def __new__(cls):
-        from application.main.router.ocr import router as router_ocr_service
+        from application.src.router.ocr import router as router_ocr_service
     
         from fastapi.routing import APIRouter
         router = APIRouter()

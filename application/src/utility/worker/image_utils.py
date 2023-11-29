@@ -14,7 +14,7 @@ class BasicImageUtils:
     logger = LoggerInstance().get_logger(__name__)
 
     @classmethod
-    async def decode_b64_image(cls, data,  cache=False):
+    async def decode_b64_image(cls, data,  cache=True):
         
         image_data = base64.b64decode(data)
         image = Image.open(io.BytesIO(image_data))
