@@ -22,6 +22,7 @@ class OCRService(object):
             self.logger.info('Running OCR')
             text = await OCREngine.extract_text(image)
         except Exception as e:
+            self.logger.error(str(e))
             raise HTTPException(status_code=500, detail=f"Error extracting text: {e}")
         
         return text
