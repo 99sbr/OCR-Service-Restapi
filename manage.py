@@ -10,6 +10,9 @@ load_dotenv()
 
 
 def get_application():
+    """
+    Creates FastAPI Object.
+    """
     _app = FastAPI(title=os.environ['API_NAME'],
                    description=os.environ['API_DESCRIPTION'],
                    version=os.environ['API_VERSION'])
