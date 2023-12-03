@@ -8,13 +8,10 @@ A FastAPI-based simple web service that accepts images, runs optical character r
 
 1. [Prerequisites](#prerequisites)
 2. [Installation](#installation)
-3. [Configuration](#configuration)
-4. [Running the Web Service](#running-the-web-service)
-5. [API Endpoints](#api-endpoints)
-6. [Examples](#examples)
-7. [Troubleshooting](#troubleshooting)
-8. [Contributing](#contributing)
-9. [License](#license)
+3. [Containerize the Service](#Containerize-the-Service)
+4. [API Endpoints](#API-Endpoints)
+6. [API ](#api-endpoints)
+
 
 ## Prerequisites
 
