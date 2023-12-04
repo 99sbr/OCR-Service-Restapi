@@ -4,15 +4,6 @@
 
 A FastAPI-based simple web service that accepts images, runs optical character recognition (OCR) on them and returns the extracted text.
 
-## Table of Contents
-
-1. [Prerequisites](#prerequisites)
-2. [Installation](#installation)
-3. [Containerize the Service](#Containerize-the-Service)
-4. [API Endpoints](#API-Endpoints)
-6. [API ](#api-endpoints)
-
-
 ## Prerequisites
 
 Before you begin, make sure you have the following prerequisites installed:
@@ -64,27 +55,26 @@ Visit `http://localhost:80/docs` to access the Swagger documentation and interac
     - Request Body: Provide a JSON object with the base64-encoded image data.
     - Response: Returns a JSON object with a job_id for tracking the asynchronous task.
 2. GET /ocr_text
-    - Description: Asynchronously gets ocr text from Job ID.
+    - Description: Asynchronously gets OCR text from Job ID.
     - Request Body: Provide a JSON object with the job-ID data.
     - Response: Returns a JSON object with the extracted text.
 
 
 ## Code Structure
 
-- `api_template:`  Contains all the API related Code Base.
+- `api_template:`  Contains all the API-related Code Base.
     - `manage.py:` Only entry point for API. Contains no logic. 
-    - `.env:` Most important file for your api and contains global configs. Acoid using application/variable level configs here.
-    - `application:`  It contains all your api related codes and test modules. I prefer keeping application folder at global.
-    - `logs`: Logs is self-explanatory. FYI it will not contain any configuration information, just raw logs. Feel free to move according to your comfort but not inside the application folder.
+    - `.env:` Most important file for our API and contains global configs. Avoid using application/variable level configs here.
+    - `application:`  It contains all our API-related codes and test modules. I prefer keeping the application folder global.
+    - `logs`: Logs are self-explanatory. FYI it will not contain any configuration information, just raw logs. Feel free to move according to your comfort but not inside the application folder.
     - `settings:` Logger/DataBase/Model global settings files in yaml/json format.
 
 - `application:` 
-    - `main:` priority folder of all your application related code.
+    - `main:` priority folder of all your application-related code.
         - `📮 routers:` API routers and they strictly do not contain any business logic
-        - `📡 services:` All processing and business logic for routers here at service layer
+        - `📡 services:` All processing and business logic for routers here at the service layer
         - `⚒ utility:`
             - `logger` Logging module for application
-            - `manager` A manager utility for Data Related Task which can be common for different services
-    - `test:` Write test cases for your application here.
-    - `initializer.py:` Preload/Initialisation of Models and Module common across application. Preloading model improves inferencing.
+            - `manager` A manager utility contains workers and handlers for Data Related Tasks which can be common for different services.
+    - `initializer.py:` Preload/Initialisation of Models and Module common across applications. The preloading model improves inferencing.
     
