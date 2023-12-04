@@ -53,6 +53,7 @@ To run the web service in a Docker container:
 ```
 Visit `http://localhost:80/docs` to access the Swagger documentation and interact with the API.
 
+![Api](https://github.com/99sbr/OCR-Service-Restapi/blob/main/cache/Screenshot%202023-12-04%20at%2014.24.10.png)
 ## API Endpoints
 1. POST /imgsync
     - Description: Synchronously extracts text from an image.
