@@ -27,4 +27,3 @@ def get_application():
 
 
 app = get_application()
-# uvicorn.run("manage:app",reload=True)

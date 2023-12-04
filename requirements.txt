@@ -1,7 +1,6 @@
 fastapi
 uvicorn
 python-dotenv
-contractions
 pyyaml
 python-multipart
 pytesseract
