@@ -43,15 +43,15 @@ Before you begin, make sure you have the following prerequisites installed:
     ```
 ## Containerize the Service
 To run the web service in a Docker container:
-    1. Build the Docker image:
-    ```bash
+1. Build the Docker image: 
+```bash 
     docker build -t ocrservice-image  .
-    ```
-    2. Run the Docker container:
-    ```bash
+ ```
+2. Run the Docker container:
+```bash
     docker run -p 80:80 ocrservice-image
-    ```
-Visit http://localhost:80/docs to access the Swagger documentation and interact with the API.
+```
+Visit `http://localhost:80/docs` to access the Swagger documentation and interact with the API.
 
 ## API Endpoints
 1. POST /imgsync
